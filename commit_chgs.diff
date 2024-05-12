@@ -7,3 +7,65 @@ index 0000000..be1ce33
 +module github.com/BlinkovskiJ/matrix
 +
 +go 1.22.0
+diff --git a/commit_chgs.diff b/commit_chgs.diff
+new file mode 100644
+index 0000000..43d547c
+--- /dev/null
++++ b/commit_chgs.diff
+@@ -0,0 +1,9 @@
++diff --git a/go.mod b/go.mod
++new file mode 100644
++index 0000000..be1ce33
++--- /dev/null
+++++ b/go.mod
++@@ -0,0 +1,3 @@
+++module github.com/BlinkovskiJ/matrix
+++
+++go 1.22.0
+diff --git a/go.mod b/go.mod
+new file mode 100644
+index 0000000..be1ce33
+--- /dev/null
++++ b/go.mod
+@@ -0,0 +1,3 @@
++module github.com/BlinkovskiJ/matrix
++
++go 1.22.0
+diff --git a/operations/replaceCol.go b/operations/replaceElements.go
+similarity index 52%
+rename from operations/replaceCol.go
+rename to operations/replaceElements.go
+index bf15dd8..7c21002 100644
+--- a/operations/replaceCol.go
++++ b/operations/replaceElements.go
+@@ -9,3 +9,13 @@ func replaceCol(matrix [][]int, originCol int, destCol int) {
+ 		matrix[i][originCol] = temp
+ 	}
+ }
++
++func replaceRow(matrix [][]int, originRow int, destRow int) {
++	originRow--
++	destRow--
++	for i := range matrix {
++		temp := matrix[destRow][i]
++		matrix[destRow][i] = matrix[originRow][i]
++		matrix[originRow][i] = temp
++	}
++}
+diff --git a/operations/replaceRow.go b/operations/replaceRow.go
+deleted file mode 100644
+index 75a6c77..0000000
+--- a/operations/replaceRow.go
++++ /dev/null
+@@ -1,11 +0,0 @@
+-package operations
+-
+-func replaceRow(matrix [][]int, originRow int, destRow int) {
+-	originRow--
+-	destRow--
+-	for i := range matrix {
+-		temp := matrix[destRow][i]
+-		matrix[destRow][i] = matrix[originRow][i]
+-		matrix[originRow][i] = temp
+-	}
+-}
