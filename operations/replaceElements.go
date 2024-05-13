@@ -23,8 +23,9 @@ func replaceRow(matrix [][]int, originRow int, destRow int) {
 func transpose(matrix [][]int) {
 	transposedMatrix := make([][]int, len(matrix))
 	for i := range matrix {
+		transposedMatrix[i] = make([]int, len(matrix[i]))
 		for j := range matrix[i] {
-			transposedMatrix[i] = append(transposedMatrix[i], matrix[j][i])
+			transposedMatrix[i][j] = matrix[j][i]
 		}
 	}
 	for i := range matrix {
