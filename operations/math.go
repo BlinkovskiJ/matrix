@@ -1,0 +1,22 @@
+package operations
+
+func multiplyMatrix(matrix1, matrix2 [][]int) [][]int {
+	if len(matrix1[0]) != len(matrix2) {
+		panic("Нельзя умножить матрицы разной размерности")
+	}
+
+	result := make([][]int, len(matrix1))
+	for i := range result {
+		result[i] = make([]int, len(matrix2[0]))
+	}
+
+	for i := 0; i < len(matrix1); i++ {
+		for j := 0; j < len(matrix2[0]); j++ {
+			for k := 0; k < len(matrix1[0]); k++ {
+				result[i][j] += matrix1[i][k] * matrix2[k][j]
+			}
+		}
+	}
+
+	return result
+}
