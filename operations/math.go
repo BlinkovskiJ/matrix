@@ -30,3 +30,15 @@ func sumMatrixElements(matrix [][]int) int {
 	}
 	return sum
 }
+
+func isSymmetricMatrix(matrix [][]int) bool {
+	size := len(matrix)
+	for i := 0; i < size; i++ {
+		for j := 0; j < size; j++ {
+			if matrix[i][j] != matrix[j][i] {
+				return false
+			}
+		}
+	}
+	return true
+}
