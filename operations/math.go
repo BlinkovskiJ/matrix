@@ -22,13 +22,13 @@ func multiplyMatrix(matrix1, matrix2 [][]int) [][]int {
 }
 
 func sumMatrixElements(matrix [][]int) int {
-	sum := 0
+	summa := 0
 	for i := range matrix {
 		for j := range matrix[i] {
-			sum += matrix[i][j]
+			summa += matrix[i][j]
 		}
 	}
-	return sum
+	return summa
 }
 
 func isSymmetricMatrix(matrix [][]int) bool {
