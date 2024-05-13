@@ -11,3 +11,14 @@ func printMatrix(matrix [][]int) {
 		fmt.Print("\n\n")
 	}
 }
+
+func printRow(matrix [][]int, rowIndex int) {
+	if rowIndex < 0 || rowIndex >= len(matrix) {
+		fmt.Println("Invalid row index")
+		return
+	}
+	for _, value := range matrix[rowIndex] {
+		fmt.Print(value, "\t")
+	}
+	fmt.Println()
+}
