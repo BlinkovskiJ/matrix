@@ -20,3 +20,13 @@ func multiplyMatrix(matrix1, matrix2 [][]int) [][]int {
 
 	return result
 }
+
+func sumMatrixElements(matrix [][]int) int {
+	sum := 0
+	for i := range matrix {
+		for j := range matrix[i] {
+			sum += matrix[i][j]
+		}
+	}
+	return sum
+}
