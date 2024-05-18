@@ -1,8 +1,20 @@
+/*!
+* \file math.go
+* \brief Functions for matrix operations.
+ */
 package operations
 
+/*!
+* \brief Multiplies two matrices.
+*
+* \param matrix1 First matrix.
+* \param matrix2 Second matrix.
+* \return The resulting matrix.
+* \exception panic If the sizes of the matrices do not allow multiplication.
+ */
 func multiplyMatrix(matrix1, matrix2 [][]int) [][]int {
 	if len(matrix1[0]) != len(matrix2) {
-		panic("Нельзя умножить матрицы разной размерности")
+		panic("Cannot multiply matrices with incompatible dimensions")
 	}
 
 	result := make([][]int, len(matrix1))
@@ -21,16 +33,28 @@ func multiplyMatrix(matrix1, matrix2 [][]int) [][]int {
 	return result
 }
 
+/*!
+* \brief Sums all elements of a matrix.
+*
+* \param matrix Matrix.
+* \return The sum of all elements of the matrix.
+ */
 func sumMatrixElements(matrix [][]int) int {
-	summa := 0
+	sum := 0
 	for i := range matrix {
 		for j := range matrix[i] {
-			summa += matrix[i][j]
+			sum += matrix[i][j]
 		}
 	}
-	return summa
+	return sum
 }
 
+/*!
+* \brief Checks if a matrix is symmetric.
+*
+* \param matrix Matrix.
+* \return true if the matrix is symmetric, otherwise false.
+ */
 func isSymmetricMatrix(matrix [][]int) bool {
 	size := len(matrix)
 	for i := 0; i < size; i++ {

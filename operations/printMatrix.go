@@ -1,7 +1,16 @@
+/*!
+* \file printMatrix.go
+* \brief Functions for printing matrices to the screen.
+ */
 package operations
 
 import "fmt"
 
+/*!
+* \brief Prints the matrix to the screen.
+*
+* \param matrix Matrix to be printed.
+ */
 func printMatrix(matrix [][]int) {
 	for i := range matrix {
 		for j := range matrix[i] {
@@ -12,6 +21,12 @@ func printMatrix(matrix [][]int) {
 	}
 }
 
+/*!
+* \brief Prints the specified row of the matrix to the screen.
+*
+* \param matrix Matrix to be printed.
+* \param rowIndex Index of the row to be printed.
+ */
 func printRow(matrix [][]int, rowIndex int) {
 	if rowIndex < 0 || rowIndex >= len(matrix) {
 		fmt.Println("Invalid row index")
